@@ -2,6 +2,13 @@
 This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hibernate, MySQL   using html form
 
 
+#Features : = 
+
+For Products:
+
+1.save
+2.update
+3.delete
 
 ### Mysql Database :-
 
