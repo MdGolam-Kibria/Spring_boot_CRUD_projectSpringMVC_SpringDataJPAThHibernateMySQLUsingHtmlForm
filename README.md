@@ -47,3 +47,17 @@ This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hiberna
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>`
+		
+		
+### Applications.properties := 
+		
+`server.port=8085
+spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto = none
+spring.jpa.show-sql = true
+spring.datasource.url =jdbc:mysql://localhost:3306/salesdb
+spring.datasource.username = root
+spring.datasource.password=413152413152
+logging.level.root=WARN`
