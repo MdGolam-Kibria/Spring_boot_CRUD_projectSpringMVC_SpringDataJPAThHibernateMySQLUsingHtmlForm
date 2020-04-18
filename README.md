@@ -71,14 +71,8 @@ logging.level.root=WARN`
  - step 2 : make a class and paste the below code:
  
  
- `package com.example.controlProducts.productManager.AlternativeApplicationProperties;
-
-import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import javax.sql.DataSource;
-
-@Configuration
+ 
+`@Configuration
 public class DataSourceConfig  {
     @Bean
     public DataSource dataSource(){
