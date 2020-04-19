@@ -71,7 +71,7 @@ logging.level.root=WARN`
 
 ### Applications.properties  Alternative way Programmatically := 
 
-- step 1 :  im main method : = 
+- step 1 :  in main method : = 
 
 `@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})`
 
