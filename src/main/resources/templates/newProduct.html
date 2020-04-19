@@ -3,10 +3,17 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Create new Product</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body style="background-image: url(/wall.jpg); background-size: cover">
+<div style="background-color: rgba(255, 255, 182, 255);
+     height: 620px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;">
 <div align="center">
-    <h1>Create New product</h1>
+    <h1 style="color:blue;">Create New product</h1>
     <br/><br/>
     <form action="#" th:action="@{/save}" th:object="${product}" method="post">
         <table border="0" cellpadding="10">
@@ -31,6 +38,7 @@
             </tr>
         </table>
     </form>
+</div>
 </div>
 </body>
 </html>

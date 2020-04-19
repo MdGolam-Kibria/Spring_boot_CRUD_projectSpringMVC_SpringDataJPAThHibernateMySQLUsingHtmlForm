@@ -47,10 +47,6 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-
-<!--        //for auto reload-->
-
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

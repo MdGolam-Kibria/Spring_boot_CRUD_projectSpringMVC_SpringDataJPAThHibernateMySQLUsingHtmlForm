@@ -3,40 +3,84 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Product Manager</title>
-</head>
-<body>
-<div align="center">
-    <h1>Product Manager</h1>
-<!--    below  addNewProduct indicate to a html file over the Controller     addNewProduct mainly a controllerMethod access key-->
-    <a href="/addNewProduct">Create new Product</a>
-    <br/><br/>
+    <style>
+        .update{
+    background-color: red
+}
+.headColor{
+color: blue
+}
+.img{
+ height: 300px;
+    width: 300;
+    border-radius: 50%;
+}
+.head{
+    height: 300px;
+    width: 300;
+    border-radius: 50%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color:rgba(0, 0, 0, 0.7);
+  }
 
-    <table border="1" cellpadding="10">
-        <thead>
-        <tr>
-            <th>Product ID</th>
-            <th>Name</th>
-            <th>Brand</th>
-            <th>Made In</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="product : ${listProducts}">
-            <td th:text="${product.id}">Product ID</td>
-            <td th:text="${product.name}">Name</td>
-            <td th:text="${product.brand}">Brand</td>
-            <td th:text="${product.madein}">Made In</td>
-            <td th:text="${product.price}">price</td>
-            <td>
-                <a th:href="@{'/edit/' + ${product.id}}">Edit</a>
-                &nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/delete/' + ${product.id}}">Delete</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    </style>
+</head>
+<body style="background-image: url(/wall.jpg); background-size: cover">
+<div class="head">
+<img src="/myPicGit.jpg" class="img">
 </div>
+<marquee direction="left"><b style="color: aliceblue;font-size: 32px;margin-top: 17px;">The main aim of software engineering
+    is to develop high-end programming environments,tools and architectures.</b></marquee>
+<br/>
+<div style="background-color: rgba(255, 255, 182, 255);
+     margin-top: 15px;
+     height: 500px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;">
+    <div align="center">
+        <h1 style="color:blue;" class="headColor">Product Manager</h1>
+        <!--    below  addNewProduct indicate to a html file over the Controller     addNewProduct mainly a controllerMethod access key-->
+        <a href="/addNewProduct">Create new Product</a>
+        <br/><br/>
+
+        <table border="1" cellpadding="10">
+            <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Made In</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--below "listProducts" is a source from "/addNewProduct" Product Controller-->
+            <!--and here all value assign in product model class here-->
+            <tr th:each="product : ${listProducts}">
+                <td th:text="${product.id}">Product ID</td>
+                <td th:text="${product.name}">Name</td>
+                <td th:text="${product.brand}">Brand</td>
+                <td th:text="${product.madein}">Made In</td>
+                <td th:text="${product.price}">price</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${product.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${product.id}}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 </body>
 </html>
+<!--NOTE-->
+<!--NBSP or "&nbsp"(non-breaking space) is used in programming, and word processing to create a space in a line that-->
+<!--cannot be broken by word wrap. With HTML, &nbsp; allows you to create multiple spaces that are visible on a web page-->
