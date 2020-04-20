@@ -1,8 +1,8 @@
 # Spring_boot_CRUD_projectSpringMVC_SpringDataJPAThHibernateMySQLUsingHtmlForm
-This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hibernate, MySQL   using html form
+This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hibernate, MySQL   using html form.
 
 
-#Features : = 
+### Features of the project : = 
 
 For Products:
 
@@ -91,3 +91,7 @@ public class DataSourceConfig  {
                 .build();
     }
 }`
+
+
+
+### More update comming soon.......
