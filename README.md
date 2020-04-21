@@ -93,5 +93,17 @@ public class DataSourceConfig  {
 }`
 
 
+### <h1><b>Output</b></h1>
+ 
+### Home Screen List of Product and if you want to delete a product just Press the Delete button :- 
 
-### More update comming soon.......
+![image](https://user-images.githubusercontent.com/61331272/79891575-fe64e100-8422-11ea-9e33-f57ed6ed4a58.png)
+
+### Add a new Product  :-
+![image](https://user-images.githubusercontent.com/61331272/79891461-d5dce700-8422-11ea-8087-7d51d7f9f851.png)
+
+### update a product  :- 
+![image](https://user-images.githubusercontent.com/61331272/79890729-bd200180-8421-11ea-8cdc-8c17e1ab4efa.png)
+
+
+### More update like user based access using spring security comming soon.......
