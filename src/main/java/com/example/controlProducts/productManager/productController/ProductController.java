@@ -48,7 +48,7 @@ public class ProductController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)//This Method for Button Control
     public String saveProduct(@ModelAttribute("product") Product product) {
         productService.save(product);
-        return "redirect:/index"; //this redirect does't work for me Here my problem
+        return "redirect:/"; //this redirect does't work for me Here my problem
     }
 
 }

@@ -3,54 +3,47 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Product Manager</title>
-    <style>
-        .update{
-    background-color: red
-}
-.headColor{
-color: blue
-}
-.img{
- height: 300px;
-    width: 300;
-    border-radius: 50%;
-}
-.head{
-    height: 300px;
-    width: 300;
-    border-radius: 50%;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  background-color:rgba(0, 0, 0, 0.7);
-  }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+ .headColor{
+        color: blue
+    }
+  .img{
+    height: 15%;
+    width: 15%;
+    border-radius: 50%;
+
+     margin-left: 20px;
+      background-size: cover;
+}
     </style>
 </head>
-<body style="background-image: url(/wall.jpg); background-size: cover">
-<div class="head">
-<img src="/myPicGit.jpg" class="img">
-</div>
-<marquee direction="left"><b style="color: aliceblue;font-size: 32px;margin-top: 17px;">The main aim of software engineering
-    is to develop high-end programming environments,tools and architectures.</b></marquee>
+<body style="background-color: rgba(255, 255, 182, 255); background-size: cover" class="container">
+<!--<div style="position:absolute;pos">-->
+<!--<img src="/myPicGit.jpg" class="img">-->
+<!--</div >-->
+
+<!--<marquee direction="left"><b style="color: brown;font-size: 32px;margin-top: 17px;">The main aim of software engineering-->
+<!--    is to develop high-end programming environments,tools and architectures.</b></marquee>-->
 <br/>
 <div style="background-color: rgba(255, 255, 182, 255);
      margin-top: 15px;
-     height: 500px;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;">
-    <div align="center">
+     height: 100%;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: auto;
+     width: 100%;">
+    <div align="center" class="table-responsive">
         <h1 style="color:blue;" class="headColor">Product Manager</h1>
         <!--    below  addNewProduct indicate to a html file over the Controller     addNewProduct mainly a controllerMethod access key-->
-        <a href="/addNewProduct">Create new Product</a>
+        <button class="btn btn-primary"> <a href="/addNewProduct" style="color:white">Create new Product</a></button>
         <br/><br/>
 
-        <table border="1" cellpadding="10">
+        <table border="1" cellpadding="10" class="table table-striped table-hover table-sm">
             <thead>
-            <tr>
+            <tr class="table-danger" align="center">
                 <th>Product ID</th>
                 <th>Name</th>
                 <th>Brand</th>
@@ -63,15 +56,15 @@ color: blue
             <!--below "listProducts" is a source from "/addNewProduct" Product Controller-->
             <!--and here all value assign in product model class here-->
             <tr th:each="product : ${listProducts}">
-                <td th:text="${product.id}">Product ID</td>
-                <td th:text="${product.name}">Name</td>
-                <td th:text="${product.brand}">Brand</td>
-                <td th:text="${product.madein}">Made In</td>
-                <td th:text="${product.price}">price</td>
-                <td>
-                    <a th:href="@{'/edit/' + ${product.id}}">Edit</a>
+                <td th:text="${product.id}" align="center">Product ID</td>
+                <td th:text="${product.name}" align="center">Name</td>
+                <td th:text="${product.brand}" align="center">Brand</td>
+                <td th:text="${product.madein}" align="center">Made In</td>
+                <td th:text="${product.price}" align="center">price</td>
+                <td align="center">
+                    <a th:href="@{'/edit/' + ${product.id}}"><button class="btn btn-primary">Edit</button></a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/delete/' + ${product.id}}">Delete</a>
+                    <a th:href="@{'/delete/' + ${product.id}}"><button class="btn btn-primary">Delete</button></a>
                 </td>
             </tr>
             </tbody>
