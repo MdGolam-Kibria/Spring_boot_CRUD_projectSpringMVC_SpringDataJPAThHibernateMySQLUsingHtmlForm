@@ -5,10 +5,7 @@ import com.example.controlProducts.productManager.productService.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -42,13 +39,12 @@ public class ProductController {
     @RequestMapping("/delete/{id}")//update a product using Product id
     public String deleteProduct(@PathVariable(name = "id") Long id) {
        productService.deleteById(id);
-       return "redirect:/";//This redirect work for me
+       return "redirect:/";
     }
-
-    @RequestMapping(value = "/save", method = RequestMethod.POST)//This Method for Button Control
+     @RequestMapping(value = "/save", method = RequestMethod.POST)//This Method for Button Control
     public String saveProduct(@ModelAttribute("product") Product product) {
         productService.save(product);
-        return "redirect:/"; //this redirect does't work for me Here my problem
+        return "redirect:/";
     }
 
 }
