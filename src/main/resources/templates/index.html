@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html SYSTEM "http:/www.thymeleaf.org/dtd/xhtml">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
@@ -15,8 +15,8 @@
     border-radius: 50%;
 
      margin-left: 20px;
-      background-size: cover;
-}
+     background-size: cover;
+      }
     </style>
 </head>
 <body style="background-color: rgba(255, 255, 182, 255); background-size: cover" class="container">
@@ -53,6 +53,7 @@
             </tr>
             </thead>
             <tbody>
+
             <!--below "listProducts" is a source from "/addNewProduct" Product Controller-->
             <!--and here all value assign in product model class here-->
             <tr th:each="product : ${listProducts}">
