@@ -3,7 +3,7 @@ This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hiberna
 
 ### Magic of the project :-🌟🌟🌟🌟🌟🌟
 
-You can't inspect this website even does not possible to get any source code 
+You can't inspect this website even does not possible to get any source code and copy any text and others things !!! 🌟
 this is the Magic on this project.🌟🌟🌟🌟🌟🌟
 
 ### Features of the project : = 
