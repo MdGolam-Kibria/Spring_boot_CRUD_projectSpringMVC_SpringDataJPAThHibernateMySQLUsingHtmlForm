@@ -1,5 +1,5 @@
 # Spring_boot_CRUD_project_SpringMVC_SpringDataJPA_Hibernate_MySQL_Using_Html 5_css 3_Bootstrap 4_Thymeleaf
-This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hibernate, MySQL using html,css and bootstrap 4.
+This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hibernate, MySQL using html,css and bootstrap 4 and javascript
 
 ### Magic of the project :-🌟🌟🌟🌟🌟🌟
 
