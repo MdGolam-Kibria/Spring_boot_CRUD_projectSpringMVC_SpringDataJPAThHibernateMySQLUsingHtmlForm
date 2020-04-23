@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" oncontextmenu="return false" onkeydown="return true;" onmousedown="return true;">
 <head>
     <title>Create New product</title>
     <meta charset="utf-8">
@@ -10,6 +10,26 @@
         .bodyStyle{background-color: rgba(255, 255, 182, 255)}
         .error{width=400px}
     </style>
+
+    <!--below for disabled mouse right button click-->
+    <script type="text/javascript">
+function disableselect(e){
+return false
+}
+
+function reEnable(){
+return true
+}
+
+//if IE4+
+document.onselectstart=new Function ("return false")
+document.oncontextmenu=new Function ("return false")
+//if NS6
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
 
 </head>
 <body class="bodyStyle">

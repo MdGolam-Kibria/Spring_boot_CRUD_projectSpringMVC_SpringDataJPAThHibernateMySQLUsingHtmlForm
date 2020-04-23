@@ -1,13 +1,30 @@
 <!DOCTYPE html SYSTEM "http:/www.thymeleaf.org/dtd/xhtml">
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
 <head>
     <meta charset="ISO-8859-1">
     <title>Product Manager</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link type="text/javascript" href="/MouseRightClickDisable.js">
+    <style>.headColor{color: blue}</style>
+<!--below for disabled mouse right button click-->
+    <script type="text/javascript">
+function disableselect(e){
+return false
+}
 
-    <style>
- .headColor{color: blue}
-    </style>
+function reEnable(){
+return true
+}
+//if IE4+
+document.onselectstart=new Function ("return false")
+document.oncontextmenu=new Function ("return false")
+//if NS6
+if (window.sidebar){
+document.onmousedown=disableselect
+document.onclick=reEnable
+}
+</script>
+
 </head>
 <body style="background-color: rgba(255, 255, 182, 255); background-size: cover" class="container">
 <!--<div style="position:absolute;pos">-->
