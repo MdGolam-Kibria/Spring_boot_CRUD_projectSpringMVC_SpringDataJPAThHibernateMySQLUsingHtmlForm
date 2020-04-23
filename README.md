@@ -1,4 +1,4 @@
-# Spring_boot_CRUD_projectSpringMVC_SpringDataJPAThHibernateMySQLUsingHtmlForm
+# Spring_boot_CRUD_project_SpringMVC_SpringDataJPA_Hibernate_MySQL_Using_Html 5_css 3_Bootstrap 4_Thymeleaf
 This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hibernate, MySQL using html,css and bootstrap 4.
 
 
@@ -9,6 +9,7 @@ For Products:
 1.save
 2.update
 3.delete
+4.From validation.
 
 ### Mysql Database :-
 
