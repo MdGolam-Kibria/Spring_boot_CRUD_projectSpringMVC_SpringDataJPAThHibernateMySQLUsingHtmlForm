@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Create new Product</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Create New product</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <style>
+        .bodyStyle{background-color: rgba(255, 255, 182, 255)}
+        .error{width=400px}
+    </style>
+
 </head>
-<body style="background-color: rgba(255, 255, 182, 255); background-size: cover">
-<div class="container" style="background-color: rgba(255, 255, 182, 255);
-     height: 620px;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;">
-    <div align="center" class="table-responsive">
-        <h1 style="color:blue;margin-top: 40px;">Create New product</h1>
-        <br/><br/>
-        <form action="#" th:action="@{/save}" th:object="${product}" method="post">
-            <table border="0" cellpadding="10">
-                <tr>
-                    <td>Product Name: =</td>
-                    <td><input type="text" th:field="*{name}"/></td>
-                </tr>
-                <tr>
-                    <td>Brand: =</td>
-                    <td><input type="text" th:field="*{brand}"/></td>
-                </tr>
-                <tr>
-                    <td>Made in: =</td>
-                    <td><input type="text" th:field="*{madein}"/></td>
-                </tr>
-                <tr>
-                    <td>Price: =</td>
-                    <td><input type="text" th:field="*{price}"/></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button type="submit" class="btn btn-primary  col text-center"><b>Add Product</b></button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
+<body class="bodyStyle">
+<!--<h1 th:text="${message}" align="center"></h1>-->
+<div class="container" align="center">
+    <h2  style="margin-top:67px;margin-bottom:50px" class="text-primary" >Create New product</h2>
+    <form action="/save" th:action="@{/save}" th:object="${product}" method="post">
+
+        <div style="display: inline-flex">
+            <label style="margin-top: 10px">Product Name:</label>
+            <input style="width: 200px;margin-left: 20px;" type="text" class="form-control"
+                   placeholder="Enter product Name" name="name" th:field="*{name}">
+        </div>
+        <br/>
+        <br/>
+        <!--below for error show-->
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+           class="alert alert-danger error"></p>
+
+        <div style="display: inline-flex">
+
+            <label style="margin-top: 10px">Brand:</label>
+            <input style="width: 200px;margin-left: 75px;" type="brand" class="form-control" id="brand"
+                   placeholder="Enter brand name" name="brand" th:field="*{brand}"> <br/>
+
+        </div>
+        <br/>
+        <br/>
+        <!--below for error show-->
+        <p th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"
+           class="alert alert-danger error"></p>
+
+        <div style="display: inline-flex">
+
+            <label style="margin-top: 10px">Madein:</label>
+            <input style="width: 200px;margin-left: 59px;" type="text" class="form-control"
+                   placeholder="Enter Made In" name="madein" th:field="*{madein}"> <br/>
+
+        </div>
+        <br/>
+        <br/>
+        <!--below for error show-->
+        <p th:if="${#fields.hasErrors('madein')}" th:errors="*{madein}" class="alert alert-danger error"></p>
+
+        <div style="display: inline-flex">
+            <label style="margin-top: 10px">Price:</label>
+            <input style="width: 200px;margin-left: 73px;" type="text" class="form-control"
+                   placeholder="Enter Price" name="price" th:field="*{price}"> <br/>
+        </div>
+        <br/>
+        <br/>
+        <!--below for error show-->
+        <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="alert alert-danger" style="width=400px"></p>
+
+        <div class="form-group form-check">
+            <label class="form-check-label"> <input
+                    class="form-check-input" type="checkbox" name="remember">
+                Remember me
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:347px">Add Product</button>
+    </form>
 </div>
+
 </body>
 </html>

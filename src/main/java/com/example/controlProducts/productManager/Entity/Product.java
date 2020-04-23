@@ -4,14 +4,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.*;
 
 @Entity
 public class Product {
     private Long id;
+    @NotNull
+    @NotEmpty(message = "Name field should not be empty")
+    @NotBlank
+    @Size(min = 2, max = 20, message = "length shoud be in between 2 to 10")
     private String name;
+    @NotNull
+    @Size(min = 2, max = 20, message = "length shoud be in between 2 to 10")
+    @NotEmpty(message = "Brand field should not be empty")
+    @NotBlank
     private String brand;
+    @NotNull
+    @NotBlank
+    @NotEmpty(message = "Made in field should not be empty")
+    @Size(min = 2, max = 20, message = "length shoud be in between 2 to 10")
     private String madein;
+    @DecimalMin("1.00")
     private float price;
+
     public Product() {
     }
 

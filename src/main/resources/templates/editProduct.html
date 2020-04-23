@@ -4,19 +4,20 @@
 <head>
     <meta charset="utf-8"/>
     <title>Edit Product</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body style="background-color: rgba(255, 255, 182, 255); background-size: cover">
 <div class="container" style="background-color: rgba(255, 255, 182, 255);
-     height: 620px;
+    height: 620px;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;">
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;">
     <div align="center">
         <h1 style="color:blue;">Edit Product</h1>
         <br/>
-        <form action="#" th:action="@{/save}" th:object="${product}"
+        <form action="#" th:action="@{/update}" th:object="${product}"
               method="post">
 
             <table border="0" cellpadding="10">
@@ -29,20 +30,48 @@
                 <tr>
                     <td>Product Name:</td>
                     <td>
-                        <input type="text" th:field="*{name}"/>
+                        <input type="text" th:field="*{name}" placeholder="Enter your product name"/>
+                    </td>
+                </tr>
+                <!--the below row for error hundle-->
+                <tr>
+                    <td>
+                        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                           class="alert alert-danger"></p>
                     </td>
                 </tr>
                 <tr>
                     <td>Brand:</td>
-                    <td><input type="text" th:field="*{brand}"/></td>
+                    <td><input type="text" th:field="*{brand}" placeholder="Enter your brand name"/></td>
+                </tr>
+                <!--the below row for error hundle-->
+                <tr>
+                    <td>
+                        <p th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"
+                           class="alert alert-danger"></p>
+                    </td>
                 </tr>
                 <tr>
                     <td>Made In:</td>
-                    <td><input type="text" th:field="*{madein}"/></td>
+                    <td><input type="text" th:field="*{madein}" placeholder="Enter your Made In"/></td>
+                </tr>
+                <!--the below row for error hundle-->
+                <tr>
+                    <td>
+                        <p th:if="${#fields.hasErrors('madein')}" th:errors="*{madein}"
+                           class="alert alert-danger"></p>
+                    </td>
                 </tr>
                 <tr>
                     <td>Price:</td>
-                    <td><input type="text" th:field="*{price}"/></td>
+                    <td><input type="text" th:field="*{price}" placeholder="Enter your price"/></td>
+                </tr>
+                <!--the below row for error hundle-->
+                <tr>
+                    <td>
+                        <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}"
+                           class="alert alert-danger"></p>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2">
