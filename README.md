@@ -4,7 +4,9 @@ This is Spring_boot_CRUD_project Spring MVC, Spring Data JPA, ThymeLeaf, Hiberna
 ### Magic of the project :-🌟🌟🌟🌟🌟🌟
 
 You can't inspect this website even does not possible to get any source code and copy any text and others things !!! 🌟
-this is the Magic on this project.🌟🌟🌟🌟🌟🌟
+this is the Magic on this project.🌟🌟🌟🌟
+But one announcement is  actually it can't possible to disable totally inspect on a website but possible to control some inspect way
+🌟🌟
 
 ### Features of the project : = 
 
