@@ -1,28 +1,70 @@
 <!DOCTYPE html SYSTEM "http:/www.thymeleaf.org/dtd/xhtml">
-<html xmlns:th="http://www.thymeleaf.org" oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
+<html xmlns:th="http://www.thymeleaf.org" oncontextmenu="return false" onkeydown="return false;"
+      onmousedown="return false;">
 <head>
     <meta charset="ISO-8859-1">
     <title>Product Manager</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link type="text/javascript" href="/MouseRightClickDisable.js">
     <style>.headColor{color: blue}</style>
-<!--below for disabled mouse right button click-->
-    <script type="text/javascript">
-function disableselect(e){
-return false
-}
-
-function reEnable(){
-return true
-}
-//if IE4+
-document.onselectstart=new Function ("return false")
-document.oncontextmenu=new Function ("return false")
-//if NS6
-if (window.sidebar){
-document.onmousedown=disableselect
-document.onclick=reEnable
-}
+    <!--below for disabled inspact this page-->
+    <script language="JavaScript">
+       window.onload = function () {
+           document.addEventListener("contextmenu", function (e) {
+               e.preventDefault();
+           }, false);
+           document.addEventListener("keydown", function (e) {
+               //document.onkeydown = function(e) {
+               // "I" key
+               if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                   disabledEvent(e);
+                   alert("?There is no benefit in trying");
+               }
+               // "J" key
+               if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                   disabledEvent(e);
+                   alert("There is no benefit in trying");
+               }
+               // "S" key + macOS
+               if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                   disabledEvent(e);
+                   alert("There is no benefit in trying");
+               }
+               // "U" key
+               if (e.ctrlKey && e.keyCode == 85) {
+                   disabledEvent(e);
+                   alert("There is no benefit in trying");
+               }
+               // "F12" key
+               if (event.keyCode == 123) {
+                   disabledEvent(e);
+                   alert("There is no benefit in trying");
+               }
+               if(e.ctrlKey && e.keyCode==67){//copy
+                   disabledEvent(e);
+                   alert("Can't copy anything");
+               }
+                if(e.ctrlKey && e.keyCode== 88){//cut
+                   disabledEvent(e);
+                   alert("Can't Cut anything");
+               }
+               if(e.ctrlKey && e.keyCode== 86){//paste
+                   disabledEvent(e);
+                   alert("Can't Paste anything ,Please write yourself");
+               }
+           }, false);
+           function disabledEvent(e) {
+               if (e.stopPropagation) {
+                   e.stopPropagation();
+               } else if (window.event) {
+                   window.event.cancelBubble = true;
+               }
+               e.preventDefault();
+               return false;
+           }
+       }
+//edit: removed ";" from last "}" because of javascript error
 </script>
 
 </head>
@@ -45,7 +87,9 @@ document.onclick=reEnable
     <div align="center" class="table-responsive">
         <h1 style="color:blue;" class="headColor">Product Manager</h1>
         <!--    below  addNewProduct indicate to a html file over the Controller addNewProduct mainly a controllerMethod access key-->
-        <a href="/addNewProduct" style="color:white"><button class="btn btn-primary">Create new Product</button></a>
+        <a href="/addNewProduct" style="color:white">
+            <button class="btn btn-primary">Create new Product</button>
+        </a>
         <br/><br/>
 
         <table border="1" cellpadding="10" class="table table-striped table-hover table-sm">
@@ -70,9 +114,13 @@ document.onclick=reEnable
                 <td th:text="${product.madein}" align="center">Made In</td>
                 <td th:text="${product.price}" align="center">price</td>
                 <td align="center">
-                    <a th:href="@{'/edit/' + ${product.id}}"><button class="btn btn-primary">Edit</button></a>
+                    <a th:href="@{'/edit/' + ${product.id}}">
+                        <button class="btn btn-primary">Edit</button>
+                    </a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/delete/' + ${product.id}}"><button class="btn btn-primary">Delete</button></a>
+                    <a th:href="@{'/delete/' + ${product.id}}">
+                        <button class="btn btn-primary">Delete</button>
+                    </a>
                 </td>
             </tr>
             </tbody>

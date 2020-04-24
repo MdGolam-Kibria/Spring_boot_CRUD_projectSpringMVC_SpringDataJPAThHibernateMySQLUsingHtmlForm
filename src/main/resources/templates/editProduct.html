@@ -6,24 +6,64 @@
     <title>Edit Product</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--below for disabled mouse right button click-->
-    <script type="text/javascript">
-function disableselect(e){
-return false
-}
+    <!--below for disabled inspact this page-->
+    <script language="JavaScript">
 
-function reEnable(){
-return true
-}
-
-//if IE4+
-document.onselectstart=new Function ("return false")
-document.oncontextmenu=new Function ("return false")
-//if NS6
-if (window.sidebar){
-document.onmousedown=disableselect
-document.onclick=reEnable
-}
+       window.onload = function () {
+           document.addEventListener("contextmenu", function (e) {
+               e.preventDefault();
+           }, false);
+           document.addEventListener("keydown", function (e) {
+               //document.onkeydown = function(e) {
+               // "I" key
+               if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                   disabledEvent(e);
+                   alert("চেষ্টা করিস না কোনো লাভ নাই");
+               }
+               // "J" key
+               if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                   disabledEvent(e);
+                   alert("চেষ্টা করিস না কোনো লাভ নাই");
+               }
+               // "S" key + macOS
+               if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                   disabledEvent(e);
+                   alert("চেষ্টা করিস না কোনো লাভ নাই");
+               }
+               // "U" key
+               if (e.ctrlKey && e.keyCode == 85) {
+                   disabledEvent(e);
+                   alert("চেষ্টা করিস না কোনো লাভ নাই");
+               }
+               // "F12" key
+               if (event.keyCode == 123) {
+                   disabledEvent(e);
+                   alert("চেষ্টা করিস না কোনো লাভ নাই");
+               }
+               if(e.ctrlKey && e.keyCode==67){//copy
+                   disabledEvent(e);
+                   alert("কোনো কিছু Copy করতে পারবেন না");
+               }
+                if(e.ctrlKey && e.keyCode== 88){//cut
+                   disabledEvent(e);
+                   alert("কোনো কিছু Cut করতে পারবেন না");
+               }
+               if(e.ctrlKey && e.keyCode== 86){//paste
+                   disabledEvent(e);
+                   alert("কোনো কিছু Paste করতে পারবেন না,দয়া করে নিজে লিখেন");
+               }
+           }, false);
+           function disabledEvent(e) {
+               if (e.stopPropagation) {
+                   e.stopPropagation();
+               } else if (window.event) {
+                   window.event.cancelBubble = true;
+               }
+               e.preventDefault();
+               return false;
+           }
+       }
+//edit: removed ";" from last "}" because of javascript error
 </script>
 </head>
 <body style="background-color: rgba(255, 255, 182, 255); background-size: cover">
