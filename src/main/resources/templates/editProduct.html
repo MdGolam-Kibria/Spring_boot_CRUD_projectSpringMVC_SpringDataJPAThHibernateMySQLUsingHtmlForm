@@ -25,6 +25,11 @@
                    disabledEvent(e);
                    alert("চেষ্টা করিস না কোনো লাভ নাই");
                }
+                // "N" key
+               if (e.ctrlKey && e.shiftKey && e.keyCode == 78) {
+                   disabledEvent(e);
+                   alert("চেষ্টা করিস না কোনো লাভ নাই");
+               }
                // "S" key + macOS
                if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
                    disabledEvent(e);

@@ -45,6 +45,11 @@
                    disabledEvent(e);
                    alert("চেষ্টা করিস না কোনো লাভ নাই");
                }
+                // "N" key
+               if (e.ctrlKey && e.shiftKey && e.keyCode == 78) {
+                   disabledEvent(e);
+                   alert("চেষ্টা করিস না কোনো লাভ নাই");
+               }
                if(e.ctrlKey && e.keyCode==67){//copy
                    disabledEvent(e);
                    alert("কোনো কিছু Copy করতে পারবেন না");
