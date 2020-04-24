@@ -67,3 +67,12 @@ public class ProductController {
     }
 
 }
+@RestController
+class rest{
+    @Autowired
+    public ProductService productService;
+    @GetMapping("/getAll")
+    public List<Product> getAllProducts(){
+        return  productService.listAll();
+    }
+}
