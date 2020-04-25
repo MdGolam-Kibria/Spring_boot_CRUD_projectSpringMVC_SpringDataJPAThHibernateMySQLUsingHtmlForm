@@ -16,6 +16,7 @@ For Products:
 2.update
 3.delete
 4.From validation.
+5.Control inspect issues.
 
 ### Mysql Database :-
 
