@@ -118,7 +118,7 @@ public class DataSourceConfig  {
 
 <h1>after add some dependency with some criteria like <b>Role based auth and access criteria with Spring security </b> below the change..  </h1><br/>
 
-#first :-
+#First :-
 
 - add thymeleaf-extras-springsecurity :
 	`<dependency>
@@ -126,13 +126,13 @@ public class DataSourceConfig  {
 		<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 	 </dependency>`
 	 
-#second :-
+#Second :-
 
 - add thymeleaf-extras-springsecurity url in html tag :
 
 `http://www.thymeleaf.org/extras/spring-security`
 
-#third :-
+#Third :-
 
 - add some thymeleaf attribute like below :-
 # in html,
@@ -145,10 +145,9 @@ Access denied control in code <b>Look at that</b>
 <h1>finally output below</h1>
 
 #Access denied page.
-
 ![image](https://user-images.githubusercontent.com/61331272/80320394-f9939900-8837-11ea-8424-8aaa1002d102.png)
-#For user:-
 
+#For user:-
 ![image](https://user-images.githubusercontent.com/61331272/80320410-0b753c00-8838-11ea-9091-856b3653f327.png)
 
 # For admin
