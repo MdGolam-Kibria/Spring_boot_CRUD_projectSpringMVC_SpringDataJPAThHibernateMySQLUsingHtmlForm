@@ -118,7 +118,25 @@ public class DataSourceConfig  {
 
 <h1>after add some dependency with some criteria like <b>Role based auth and access criteria with Spring security </b> below the change..  </h1><br/>
 
+#first :-
 
+- add thymeleaf-extras-springsecurity :
+	`<dependency>
+		<groupId>org.thymeleaf.extras</groupId>
+		<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+	 </dependency>`
+	 
+#second :-
 
+- add thymeleaf-extras-springsecurity url in html tag :
+
+`http://www.thymeleaf.org/extras/spring-security`
+
+#third :-
+
+- add some thymeleaf attribute like below :-
+`<div sec:authorize="${hasRole(#vars.expectedRole)}">
+  This will only be displayed if authenticated user has a role computed by the controller.
+</div>`
 
 ### More update like user based access using spring security comming soon.......
