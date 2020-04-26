@@ -148,7 +148,7 @@ Access denied control in code <b>Look at that</b>
 ![image](https://user-images.githubusercontent.com/61331272/80320394-f9939900-8837-11ea-8424-8aaa1002d102.png)
 
 #For user:-
-![image](https://user-images.githubusercontent.com/61331272/80320410-0b753c00-8838-11ea-9091-856b3653f327.png)
+![image](https://user-images.githubusercontent.com/61331272/80320754-19c45780-883a-11ea-83b4-c8ed3c2ee0ed.png)
 
 # For admin
 ![image](https://user-images.githubusercontent.com/61331272/80320420-1af48500-8838-11ea-945e-b483c2f9d825.png)
