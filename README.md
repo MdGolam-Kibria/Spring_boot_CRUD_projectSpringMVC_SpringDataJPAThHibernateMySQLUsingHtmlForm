@@ -118,6 +118,12 @@ public class DataSourceConfig  {
 
 <h1>after add some dependency with some criteria like <b>Role based auth and access criteria with Spring security </b> below the change..  </h1><br/>
 
+###Create database table for user/admin/others access like below
+
+![image](https://user-images.githubusercontent.com/61331272/80320859-c69ed480-883a-11ea-9aa0-0691036a158f.png)
+
+#After;
+
 #First :-
 
 - add thymeleaf-extras-springsecurity :
