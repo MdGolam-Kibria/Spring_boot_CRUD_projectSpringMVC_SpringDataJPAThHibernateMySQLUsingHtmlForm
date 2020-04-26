@@ -135,8 +135,9 @@ public class DataSourceConfig  {
 #third :-
 
 - add some thymeleaf attribute like below :-
-`<div sec:authorize="${hasRole(#vars.expectedRole)}">
+# in html,
+`div sec:authorize="${hasRole(#vars.expectedRole)}"
   This will only be displayed if authenticated user has a role computed by the controller.
-</div>`
+div`
 
 ### More update like user based access using spring security comming soon.......
