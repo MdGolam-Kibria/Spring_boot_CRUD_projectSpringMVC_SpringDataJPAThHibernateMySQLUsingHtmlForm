@@ -136,8 +136,23 @@ public class DataSourceConfig  {
 
 - add some thymeleaf attribute like below :-
 # in html,
-`div sec:authorize="${hasRole(#vars.expectedRole)}"
+`div sec:authorize="${hasRole(hasRole('ADMIN'))}"
   This will only be displayed if authenticated user has a role computed by the controller.
 div`
+details in  index.html file on action access <b>Look at that</b>
+###last :-
+Access denied control in code <b>Look at that</b>
+<h1>finally output below</h1>
+
+#Access denied page.
+
+![image](https://user-images.githubusercontent.com/61331272/80320394-f9939900-8837-11ea-8424-8aaa1002d102.png)
+#For user:-
+
+![image](https://user-images.githubusercontent.com/61331272/80320410-0b753c00-8838-11ea-9091-856b3653f327.png)
+
+# For admin
+![image](https://user-images.githubusercontent.com/61331272/80320420-1af48500-8838-11ea-945e-b483c2f9d825.png)
+
 
 ### More update like user based access using spring security comming soon.......
