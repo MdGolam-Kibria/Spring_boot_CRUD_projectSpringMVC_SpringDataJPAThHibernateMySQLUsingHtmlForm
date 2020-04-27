@@ -127,10 +127,14 @@ public class DataSourceConfig  {
 #First :-
 
 - add thymeleaf-extras-springsecurity :
+
+
 	`<dependency>
 		<groupId>org.thymeleaf.extras</groupId>
 		<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 	 </dependency>`
+
+
 	 
 #Second :-
 
