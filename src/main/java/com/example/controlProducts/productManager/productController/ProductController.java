@@ -67,12 +67,38 @@ public class ProductController {
     }
 
 }
+
 @RestController
-class rest{
+class rest {
     @Autowired
     public ProductService productService;
+
     @GetMapping("/getAll")
-    public List<Product> getAllProducts(){
-        return  productService.listAll();
+    public List<Product> getAllProducts() {
+        return productService.listAll();
     }
+
+    @GetMapping("/getByQuary/{brand}")
+//This controller using @Query annotation
+    List<Product> getAllProductByBrand(@PathVariable(name = "brand") String brand) {
+        return productService.getAllProductByBrand(brand);
+    }
+
+    @GetMapping("/getByQuary/{brand}/{madein}")
+//This controller using @Query annotation
+    List<Product> getAllProductByBrandAndMadein(@PathVariable(name = "brand") String brand, @PathVariable(name = "madein") String madein) {
+        return productService.getAllProductByBrandAndMadein(brand, madein);
+    }
+
+    /**
+     * below method here i use ###Put and get together because this methos logic is at first put some data then the method return
+     * something means ###Get that's the reason i use Put And Get mapping together.
+     */
+//This controller using @Query annotation
+    @RequestMapping(value = "/updateProductBrandByIdAndBrandName/{id}/{brand}", method = {RequestMethod.PUT, RequestMethod.GET})
+    String updateProductBrandByIdAndBrandName(@PathVariable(name = "id") String id, @PathVariable(name = "brand") String brand) {
+        productService.updateProductBrandByIdAndBrandName(Long.parseLong(id), brand);//jehoto parametar ta string tai string to Long e covert kora hoise
+        return "update the brand name";
+    }
+
 }
