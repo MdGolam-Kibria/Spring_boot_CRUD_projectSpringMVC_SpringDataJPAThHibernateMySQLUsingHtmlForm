@@ -23,7 +23,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     /***
      * Now i want to update something using query
      * below the update tricks
-     * if i want to modify something like UPDATE,DELETE,DROP then must use this to annotation
+     * if i want to modify something like UPDATE,DELETE,DROP then must use this two annotation
      * @Transactional
      * @Modifying
      **/
