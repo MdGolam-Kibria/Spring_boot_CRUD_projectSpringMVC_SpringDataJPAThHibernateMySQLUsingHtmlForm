@@ -65,7 +65,6 @@ public class ProductController {
             return "redirect:/";
         }
     }
-
 }
 
 @RestController
@@ -100,5 +99,4 @@ class ForRestService {
         productService.updateProductBrandByIdAndBrandName(Long.parseLong(id), brand);//jehoto parametar ta string tai string to Long e covert kora hoise
         return "update the brand name";
     }
-
 }
