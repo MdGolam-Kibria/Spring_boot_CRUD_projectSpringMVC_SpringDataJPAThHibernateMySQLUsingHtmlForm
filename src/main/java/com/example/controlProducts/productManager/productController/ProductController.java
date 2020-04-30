@@ -80,7 +80,7 @@ class rest {
 
     @GetMapping("/getByQuary/{brand}")
 //This controller using @Query annotation
-    List<Product> getAllProductByBrand(@PathVariable(name = "brand") String brand) {
+    List<Product> getAllProductByHerBrand(@PathVariable(name = "brand") String brand) {
         return productService.getAllProductByBrand(brand);
     }
 
