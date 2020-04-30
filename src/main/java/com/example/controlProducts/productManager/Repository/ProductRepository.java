@@ -12,12 +12,14 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     /***
      * below:=
-     * select p = here p means Product first latter p
+     * Here u is a user defined variable name this variable act as a variable like java variable
+     * with this variable we can access all Product entity class data for this @Query Annotation.
+     * we assign all Product info... in this variable.
      */
-    @Query("select p from Product p where p.brand=?1")
+    @Query("select u from Product u where u.brand=?1")
     List<Product> getAllProductByBrand(String brand);
 
-    @Query("select p from Product p where p.brand = :brand and p.madein = :madein")
+    @Query("select k from Product k where k.brand = :brand and k.madein = :madein")
     List<Product> getAllProductByBrandAndMadein(@Param("brand") String brand, @Param("madein") String madein);
 
     /***
