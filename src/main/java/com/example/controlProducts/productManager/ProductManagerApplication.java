@@ -14,4 +14,5 @@ public class ProductManagerApplication {
 //document for this project = https://www.codejava.net/frameworks/spring-boot/form-authentication-with-jdbc-and-mysql.
 //role based access auth = https://www.youtube.com/watch?v=Dt0ZaeO3_y8&list=PLR2yPNIFMlL9UUF6-syrVrNaRwHVJofZE&index=21.
 //main document for problem in spring security for some updates   = https://github.com/thymeleaf/thymeleaf-extras-springsecurity.
+	//@Query annoation logic source https://youtu.be/oVKpNP3FcPc and https://thoughts-on-java.org/spring-data-jpa-query-annotation/
 }
