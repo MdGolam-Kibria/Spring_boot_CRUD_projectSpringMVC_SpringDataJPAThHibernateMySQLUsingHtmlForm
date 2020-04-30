@@ -15,6 +15,7 @@ For Products:
 1.save
 2.update
 3.delete
+3.1: manipulate data By Using @Query annotation for my own database logic.🌟🌟
 4.From validation.
 5.Control inspect issues.
 6.spring security 
