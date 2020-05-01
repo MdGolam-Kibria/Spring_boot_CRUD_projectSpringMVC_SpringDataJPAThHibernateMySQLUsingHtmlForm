@@ -20,6 +20,7 @@ For Products:
 5.Control inspect issues.
 6.spring security 
 7.Role based spring security with Role based access.
+8.Add searching features in this project using my MySql query basen on @Query JPQL query
 8.more comming soon
 
 ### Mysql Database :-
