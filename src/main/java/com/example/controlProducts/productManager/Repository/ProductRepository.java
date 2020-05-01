@@ -16,8 +16,19 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
      * with this variable we can access all Product entity class data for this @Query Annotation.
      * we assign all Product info... in this variable.
      */
-    @Query("select u from Product u where u.brand=?1")
+    @Query("select u from Product u where u.brand=?1")//This is JPQL Query
     List<Product> getAllProductByBrand(String brand);
+
+    @Query("select p from Product p where p.name like %?1% or p.brand like %?1%")
+    List<Product> getAllProductByNameOrBrand(String nameOrBrand);//for search
+
+    /**
+     *below this is another good searching query.
+     *For searching with any data of the table here like id,name,brand,madein,price even any word or number.
+     *This searching method is much popular!!!
+     */
+    @Query("select p from Product p where concat(p.id, p.name, p.brand, p.madein, p.price)  like %?1%")
+    List<Product> getAllProductByIdNameBrandMadeinPrice(String idNameBrandMadeinPrice);//for search
 
     @Query("select k from Product k where k.brand = :brand and k.madein = :madein")
     List<Product> getAllProductByBrandAndMadein(@Param("brand") String brand, @Param("madein") String madein);

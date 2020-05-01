@@ -32,6 +32,24 @@ public class ProductService {
     public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
+   public List<Product> getAllProductByNameOrBrand(String nameOrBrand){//for search
+        if (nameOrBrand!=null) {
+            return productRepository.getAllProductByNameOrBrand(nameOrBrand);
+        }else {
+            return productRepository.findAll();
+        }
+    }
+    /**
+     *below this is another good searching query.
+     *For searching with any data of the table here like id,name,brand,madein,price even any word or number.
+     */
+   public List<Product> getAllProductByIdNameBrandMadeinPrice(String idNameBrandMadeinPrice){
+        if (idNameBrandMadeinPrice!=null){
+            return productRepository.getAllProductByIdNameBrandMadeinPrice(idNameBrandMadeinPrice);
+        }else {
+            return productRepository.findAll();
+        }
+   }
 
     public List<Product> getAllProductByBrand(String brand) {
         return productRepository.getAllProductByBrand(brand);

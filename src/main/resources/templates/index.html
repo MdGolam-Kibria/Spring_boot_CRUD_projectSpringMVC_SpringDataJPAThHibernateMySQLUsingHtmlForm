@@ -78,8 +78,7 @@
 
 </head>
 <body style="background-color: rgba(255, 255, 182, 255); background-size: cover" class="container"
-      oncontextmenu="return false" onkeydown="return false;"
-      onmousedown="return false;">
+      oncontextmenu="return false">
 <!--<div style="position:absolute;pos">-->
 <!--<img src="/myPicGit.jpg" class="img">-->
 <!--</div >-->
@@ -111,7 +110,14 @@
             <form th:action="@{/logout}" method="post">
                 <input type="submit" value="logout" class="btn btn-outline-danger btn-md">
             </form>
-
+            &nbsp &nbsp &nbsp &nbsp &nbsp
+            <form th:action="@{/}">
+                Search:  <input type="text" name="keyword" th:value="${searchKeyword}" required/>
+                &nbsp &nbsp
+                <input type="submit" value="Search"/>
+                &nbsp &nbsp
+                <input type="button" value="Clear" onclick="clearMethodBaseOnJavaScript()"/><!--this onclick method clear the search operations -->
+            </form>
         </div>
 
         <br/><br/>
@@ -147,6 +153,11 @@
                     </a>
                 </td>
             </tr>
+            <script type="text/javascript"> <!--This javascript method for clear search operations-->
+                function clearMethodBaseOnJavaScript(){
+                window.location = "/";
+                 }
+            </script>
             </tbody>
         </table>
     </div>

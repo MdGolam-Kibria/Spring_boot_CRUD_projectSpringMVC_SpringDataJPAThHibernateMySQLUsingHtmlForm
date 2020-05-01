@@ -3,12 +3,15 @@ package com.example.controlProducts.productManager.productController;
 import com.example.controlProducts.productManager.Entity.Product;
 import com.example.controlProducts.productManager.productService.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.script.ScriptEngine;
+import javax.swing.*;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,9 +21,17 @@ public class ProductController {
     public ProductService productService;
 
     @RequestMapping("/")//This is home page
-    public String viewHomePage(Model model) {//this model parameter from spring MVC
-        List<Product> productsList = productService.listAll();
-        model.addAttribute("listProducts", productsList);
+    public String viewHomePage(Model model, @Param("keyword") String keyword) {//this model parameter from spring MVC
+        List<Product> productsList = productService.getAllProductByNameOrBrand(keyword);//for search
+        /**
+         *below this is another good searching query.
+         *For searching with any data of the table here like id,name,brand,madein,price even any word or number.
+         * This searching method is much popular
+         */
+        List<Product> searchProductList = productService.getAllProductByIdNameBrandMadeinPrice(keyword);
+        model.addAttribute("listProducts", productsList);//for search by name and brand
+        model.addAttribute("listProducts", searchProductList);
+        model.addAttribute("searchKeyword", keyword);//for show url based on search key
         return "index";
     }
 
@@ -77,16 +88,36 @@ class ForRestService {
         return productService.listAll();
     }
 
+
+    @GetMapping("/getAllProductByHerProductNameOrBrand/{nameOrBrand}")
+        //for search
+        //This controller using @Query annotation
+    List<Product> getAllProductByHerProductNameOrBrand(@PathVariable(name = "nameOrBrand") String nameOrBrand) {
+        return productService.getAllProductByNameOrBrand(nameOrBrand);
+    }
+
     @GetMapping("/getAllProductByHerBrandName/{brand}")
-    //This controller using @Query annotation
+        //for search
+        //This controller using @Query annotation
     List<Product> getAllProductByHerBrand(@PathVariable(name = "brand") String brand) {
         return productService.getAllProductByBrand(brand);
     }
 
     @GetMapping("/getAllProductByHerBrandNameAndMadeIn/{brand}/{madein}")
-    //This controller using @Query annotation
+        //for search
+        //This controller using @Query annotation
     List<Product> getAllProductByBrandAndMadein(@PathVariable(name = "brand") String brand, @PathVariable(name = "madein") String madein) {
         return productService.getAllProductByBrandAndMadein(brand, madein);
+    }
+
+    /**
+     * below this is another good searching query.
+     * For searching with any data of the table here like id,name,brand,madein,price even any word or number.
+     */
+    @GetMapping("/getAllProductByIdNameBrandMadeinPrice/{searchKey}")
+//This controller using @Query annotation also
+    List<Product> getAllProductByIdNameBrandMadeinPrice(@PathVariable(name = "searchKey") String searchKey) {
+        return productService.getAllProductByIdNameBrandMadeinPrice(searchKey);
     }
 
     /**
