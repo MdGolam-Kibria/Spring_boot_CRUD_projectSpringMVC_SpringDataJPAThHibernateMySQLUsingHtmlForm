@@ -100,7 +100,15 @@
             [[${#httpServletRequest.remoteUser}]]</p></h3>
 
         <h1 style="color:blue;" class="headColor">Product Manager</h1>
-        <div style="display: inline-flex">
+        <div style="display: inline-flex;margin-right: 300px">
+            <form th:action="@{/}">
+                Search:  <input type="text" name="keyword" th:value="${searchKeyword}" required/>
+                &nbsp &nbsp
+                <input type="submit" value="Search" class="btn btn-outline-primary btn-sm"/>
+                &nbsp &nbsp
+                <input type="button" value="Clear" onclick="clearMethodBaseOnJavaScript()" class="btn btn-outline-primary btn-sm"/><!--this onclick method clear the search operations -->
+            </form>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
             <!--    below  addNewProduct indicate to a html file over the Controller addNewProduct mainly a controllerMethod access key-->
             <a href="/addNewProduct" style="color:white">
                 <button class="btn btn-outline-success btn-md">Create new Product</button>
@@ -110,14 +118,7 @@
             <form th:action="@{/logout}" method="post">
                 <input type="submit" value="logout" class="btn btn-outline-danger btn-md">
             </form>
-            &nbsp &nbsp &nbsp &nbsp &nbsp
-            <form th:action="@{/}">
-                Search:  <input type="text" name="keyword" th:value="${searchKeyword}" required/>
-                &nbsp &nbsp
-                <input type="submit" value="Search"/>
-                &nbsp &nbsp
-                <input type="button" value="Clear" onclick="clearMethodBaseOnJavaScript()"/><!--this onclick method clear the search operations -->
-            </form>
+
         </div>
 
         <br/><br/>
