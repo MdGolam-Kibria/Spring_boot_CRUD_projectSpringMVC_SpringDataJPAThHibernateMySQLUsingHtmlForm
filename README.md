@@ -163,7 +163,7 @@ Access denied control in code <b>Look at that</b>
 ![image](https://user-images.githubusercontent.com/61331272/80845122-28d84a80-8c2a-11ea-896b-dedb1d2fe801.png)
 
 # For admin
-![image](https://user-images.githubusercontent.com/61331272/80320420-1af48500-8838-11ea-945e-b483c2f9d825.png)
+![image](https://user-images.githubusercontent.com/61331272/80845218-6dfc7c80-8c2a-11ea-9bd6-4a1d70dfb13b.png)
 
 
 <h2>Any problem see the documentation below</h2>
