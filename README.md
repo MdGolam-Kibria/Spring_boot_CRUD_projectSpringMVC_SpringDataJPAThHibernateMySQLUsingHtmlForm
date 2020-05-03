@@ -169,4 +169,4 @@ Access denied control in code <b>Look at that</b>
 <h2>Any problem see the documentation below</h2>
 @https://github.com/thymeleaf/thymeleaf-extras-springsecurity
 
-### More update comming soon.......
+### More update comming soon.......like custom spring login and logout
