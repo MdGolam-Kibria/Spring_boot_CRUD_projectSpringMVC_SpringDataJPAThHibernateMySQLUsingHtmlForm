@@ -23,6 +23,7 @@ import java.io.IOException;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //for this spring security document source = https://www.codejava.net/frameworks/spring-boot/form-authentication-with-jdbc-and-mysql
+    //another high level sp...security = https://youtu.be/_-CqWDqWaNk?list=PLR2yPNIFMlL9UUF6-syrVrNaRwHVJofZE.
     @Autowired
     private DataSource dataSource;
 
