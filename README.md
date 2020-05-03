@@ -21,6 +21,7 @@ For Products:
 6.spring security 
 7.Role based spring security with Role based access.
 8.Add searching features in this project using my MySql query basen on @Query JPQL query
+9.generate high level spring security  with login and logout all security features including here
 8.more comming soon
 
 ### Mysql Database :-
@@ -169,4 +170,4 @@ Access denied control in code <b>Look at that</b>
 <h2>Any problem see the documentation below</h2>
 @https://github.com/thymeleaf/thymeleaf-extras-springsecurity
 
-### More update comming soon.......like custom spring login and logout
+### More update comming soon.......
