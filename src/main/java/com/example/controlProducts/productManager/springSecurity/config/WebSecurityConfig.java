@@ -82,6 +82,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     }
                 })
                 .and()
-                .exceptionHandling().accessDeniedPage("/403");//any Exception here then show this "/403" controller url and cotrol it from AllViewController.java class 1st line.
+                .exceptionHandling().accessDeniedPage("/403");//any Exception here then show this "/403" controller url and control it from AllViewController.java class 1st line.
     }
 }
