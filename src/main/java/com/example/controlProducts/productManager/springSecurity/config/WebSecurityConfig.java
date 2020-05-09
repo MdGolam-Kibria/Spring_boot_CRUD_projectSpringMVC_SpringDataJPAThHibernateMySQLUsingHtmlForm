@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
@@ -84,4 +85,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .exceptionHandling().accessDeniedPage("/403");//any Exception here then show this "/403" controller url and control it from AllViewController.java class 1st line.
     }
+
+    @Override//best way for Ignore spring security for a fixed url
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/home");
+        web.ignoring().antMatchers("/getAllProductByIdNameBrandMadeinPrice/**");//this is the ignoring way for searching a
+        // method
+        //Below
+        // Spring Security should completely ignore URLs ending with .html so just use the controller method access URL like here "/" this is for MVC WEB page
+       // web.ignoring().antMatchers("/");//this line comment reason is i don't need this but this method is true.
+     }
 }

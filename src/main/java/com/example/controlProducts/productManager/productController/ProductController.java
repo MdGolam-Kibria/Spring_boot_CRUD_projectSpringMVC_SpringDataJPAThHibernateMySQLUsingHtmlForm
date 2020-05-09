@@ -122,6 +122,7 @@ class ForRestService {
      * For searching with any data of the table here like id,name,brand,madein,price even any word or number.
      */
     @GetMapping("/getAllProductByIdNameBrandMadeinPrice/{searchKey}")
+    @ResponseBody
 //This controller using @Query annotation also
     List<Product> getAllProductByIdNameBrandMadeinPrice(@PathVariable(name = "searchKey") String searchKey) {
         return productService.getAllProductByIdNameBrandMadeinPrice(searchKey);
