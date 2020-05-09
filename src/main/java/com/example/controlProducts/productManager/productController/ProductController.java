@@ -34,6 +34,13 @@ public class ProductController {
         model.addAttribute("searchKeyword", keyword);//for show url based on search key
         return "index";
     }
+    @GetMapping("/home")
+    @ResponseBody//if i want to response as a json from @Controller then i must use this @Response body annotation ...it give a result from body.
+    public List<Product> homePageData(){
+        List<Product> productsList = productService.listAll();
+        return productsList;
+
+    }
 
     @RequestMapping("/addNewProduct")//add a new product on home page
     public String showNewProductForm(Model model) {

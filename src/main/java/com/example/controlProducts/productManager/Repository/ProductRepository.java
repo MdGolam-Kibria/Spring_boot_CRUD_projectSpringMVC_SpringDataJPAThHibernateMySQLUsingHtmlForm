@@ -30,7 +30,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("select p from Product p where concat(p.id, p.name, p.brand, p.madein, p.price)  like %?1%")
     List<Product> getAllProductByIdNameBrandMadeinPrice(String idNameBrandMadeinPrice);//for search
 
-    @Query("select k from Product k where k.brand = :brand and k.madein = :madein")
+    @Query("select k from Product k where k.brand = :brand and k.madein = :madein")//here k is just a variable like a java variable.
     List<Product> getAllProductByBrandAndMadein(@Param("brand") String brand, @Param("madein") String madein);
 
     /***
