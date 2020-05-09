@@ -22,7 +22,7 @@ For Products:
 7.Role based spring security with Role based access.<br/>
 8.Add searching features in this project using my MySql query basen on @Query JPQL query <br/>
 9.generate high level spring security  with login and logout all security features including here <br/>
-10.ignoring authentication for some controller method url access 🌟🌟 way tutorial belo link <br/>
+10.ignoring authentication for some controller method url access 🌟🌟 way tutorial link below <br/>
 @https://github.com/MdGolam-Kibria/Spring_boot_CRUD_projectSpringMVC_SpringDataJPAThHibernateMySQLUsingHtmlForm/blob/master/src/main/java/com/example/controlProducts/productManager/springSecurity/config/WebSecurityConfig.java  <br/>
 11.more comming soon<br/>
 
