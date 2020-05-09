@@ -170,4 +170,21 @@ Access denied control in code <b>Look at that</b>
 <h2>Any problem see the documentation below</h2>
 @https://github.com/thymeleaf/thymeleaf-extras-springsecurity
 
+
+### Spring security documentations: -
+
+-authorizeRequests(): It allows restricted access. HTTP requests are authorized before being served.
+- antMatchers(): It matches the URL with given pattern.
+- access(): It checks if the USER has provided role.
+- formLogin(): Enables form based authentication.
+- loginPage(): It specifies the custom login page URL.
+- loginProcessingUrl(): It specifies the URL using which username and password is validated.
+- usernameParameter(): It specifies the field name to enter user name which is used by spring security to validate. If not specified then default is username.
+- passwordParameter(): It specifies the field name to enter password which is used by spring security to validate. If not specified then default is password.
+- defaultSuccessUrl(): It specifies the default URL which is used by spring security after successful authentication.
+- logout(): It support the logout functionality in spring security application.
+- logoutUrl(): If defines the URL for logout. If CSRF protection is enabled, logout request must be POST.
+- logoutSuccessUrl(): It specifies the URL which is used by spring security after successful logout.
+- configureGlobal(): It configures AuthenticationManager.
+
 ### More update comming soon next day.......
