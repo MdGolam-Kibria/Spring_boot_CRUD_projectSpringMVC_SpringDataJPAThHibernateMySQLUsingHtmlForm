@@ -1,18 +1,17 @@
 package com.example.controlProducts.productManager.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
+@Table(name = "product")
 public class Product {
     private Long id;
     @NotNull
     @NotEmpty(message = "Name field should not be empty")
     @NotBlank
     @Size(min = 2, max = 20, message = "length shoud be in between 2 to 10")
+    @Column(name = "name")
     private String name;
     @NotNull
     @Size(min = 2, max = 20, message = "length shoud be in between 2 to 10")

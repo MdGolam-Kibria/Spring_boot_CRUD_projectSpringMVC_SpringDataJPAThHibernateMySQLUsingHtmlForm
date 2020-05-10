@@ -1,6 +1,7 @@
 package com.example.controlProducts.productManager.productController;
 
 import com.example.controlProducts.productManager.Entity.Product;
+import com.example.controlProducts.productManager.jdbc.ProductJdbcTemplateRepository;
 import com.example.controlProducts.productManager.productService.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -19,6 +20,14 @@ import java.util.List;
 public class ProductController {
     @Autowired
     public ProductService productService;
+    @Autowired
+    ProductJdbcTemplateRepository productJdbcTemplateRepository;
+
+//    @GetMapping("/jdbc/{name}")
+//    @ResponseBody
+//    public List<Product> getAllProductBynameAndMadeinjdbctamplateway(@PathVariable String name){
+//        return productJdbcTemplateRepository.getAllProductByNameNameAndMadein(name);
+//    }
 
     @RequestMapping("/")//This is home page
     public String viewHomePage(Model model, @Param("keyword") String keyword) {//this model parameter from spring MVC
@@ -34,9 +43,11 @@ public class ProductController {
         model.addAttribute("searchKeyword", keyword);//for show url based on search key
         return "index";
     }
+
     @GetMapping("/home")
-    @ResponseBody//if i want to response as a json from @Controller then i must use this @Response body annotation ...it give a result from body.
-    public List<Product> homePageData(){
+    @ResponseBody
+//if i want to response as a json from @Controller then i must use this @Response body annotation ...it give a result from body.
+    public List<Product> homePageData() {
         List<Product> productsList = productService.listAll();
         return productsList;
 
@@ -89,6 +100,15 @@ public class ProductController {
 class ForRestService {
     @Autowired
     public ProductService productService;
+    @Autowired
+    ProductJdbcTemplateRepository productJdbcTemplateRepository;
+
+    @GetMapping("/jdbc/{name}")
+    public List<Product> getAllProductBynameAndMadeinjdbctamplateway(@PathVariable(name = "name") String name) {
+        List<Product> products = productJdbcTemplateRepository.getAllProductByNameNameAndMadein(name);
+        return products;
+    }
+
 
     @GetMapping("/getAll")
     public List<Product> getAllProducts() {
