@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
-@Configuration
+@Configuration //congigaration annotation na use korle amra kono bean declare korte parbo na
 public class DataSourceConfig  {
     @Bean
     public DataSource dataSource(){
