@@ -7,7 +7,7 @@ import javax.sql.DataSource;
 
 @Configuration //congigaration annotation na use korle amra kono bean declare korte parbo na
 public class DataSourceConfig  {
-    @Bean
+    @Bean  ///@Configaration annotation use korer jonnoi  ekhane amra @Bean declare korte parchi
     public DataSource dataSource(){
         return DataSourceBuilder.create()
                 .driverClassName("com.mysql.cj.jdbc.Driver")
