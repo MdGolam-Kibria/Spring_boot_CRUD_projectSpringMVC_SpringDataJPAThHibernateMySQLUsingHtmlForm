@@ -93,13 +93,16 @@ logging.level.root=WARN`
 
 - step 1 :  in main method : = 
 
-`@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})`
+```Java
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+```
 
  - step 2 : make a class and paste the below code:
  
  
  
-`@Configuration
+```Java 
+@Configuration
 public class DataSourceConfig  {
     @Bean
     public DataSource dataSource(){
@@ -110,7 +113,8 @@ public class DataSourceConfig  {
                 .password("413152413152")
                 .build();
     }
-}`
+}
+```
 
 
 ### <h1><b>Output</b></h1>
@@ -138,10 +142,12 @@ public class DataSourceConfig  {
 - add thymeleaf-extras-springsecurity :
 
 
-	`<dependency>
+	```maven
+	<dependency>
 		<groupId>org.thymeleaf.extras</groupId>
 		<artifactId>thymeleaf-extras-springsecurity5</artifactId>
-	 </dependency>`
+	 </dependency>
+	 ```
 
 
 	 
@@ -149,7 +155,9 @@ public class DataSourceConfig  {
 
 - add thymeleaf-extras-springsecurity url in html tag :
 
-`http://www.thymeleaf.org/extras/spring-security`
+``` html
+http://www.thymeleaf.org/extras/spring-security
+```
 
 #Third :-
 
@@ -178,7 +186,7 @@ Access denied control in code <b>Look at that</b>
 
 
 ### Spring security documentations: -
-
+```Java
 -authorizeRequests(): It allows restricted access. HTTP requests are authorized before being served.
 - antMatchers(): It matches the URL with given pattern.
 - access(): It checks if the USER has provided role.
@@ -192,5 +200,6 @@ Access denied control in code <b>Look at that</b>
 - logoutUrl(): If defines the URL for logout. If CSRF protection is enabled, logout request must be POST.
 - logoutSuccessUrl(): It specifies the URL which is used by spring security after successful logout.
 - configureGlobal(): It configures AuthenticationManager.
+```
 
 ### More update comming soon next day.......
